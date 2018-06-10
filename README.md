@@ -7,7 +7,7 @@ This is a full step Python program to create an efficient real-time face recogni
 ## Steps:
 
 1) Take pictures using the `Face_taker.py` script. The script will save 30 images of your face in the `image` folder (Create manually the folder).
-Note: You will not see the camera pops up on the screen while taking the pictures. However, you will see the light of the camera on. Make sure youe face is centered. The program will end when all the 30 pictures are taken.
+Note: You will not see the camera pops up on the screen while taking the pictures. However, you will see the light of the camera on. Make sure your face is centered. The program will end when all the 30 pictures are taken.
 
 2) The `Face_tain.py` script will train a model to recognize your face from the 30 images taken using `Face_taker.py` script, and save the training output in the `training.yaml` file.
 
