@@ -2,6 +2,8 @@
 
 This is a full step Python program to create an efficient real-time face recognition app.
 
+<img src = 'https://github.com/medsriha/Real-Time-Face-Recognition/blob/master/gif.gif?raw=true'><center>
+
 ## Steps:
 
 1) Take pictures using the `Face_taker.py` script. The script will save 30 images of your face in the `image` folder (Create manually the folder).
