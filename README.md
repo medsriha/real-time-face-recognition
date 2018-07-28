@@ -16,4 +16,3 @@ Note: If the recognizer could predict a face, we put a text over the image with 
 
 That is it!! enjoy.
 
-A big up to <a href = 'https://www.hackster.io/mjrobot/real-time-face-recognition-an-end-to-end-project-a10826'>Marcelo</a>
