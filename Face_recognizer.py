@@ -14,7 +14,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 id = 0
 # names related to ids: The names associated to the ids: 1 for Mohamed, 2 for Jack, etc...
-names = ['None', 'Mohamed']
+names = ['None'] # add a name into this list
 #Video Capture
 cam = cv2.VideoCapture(0)
 cam.set(3, 640)
