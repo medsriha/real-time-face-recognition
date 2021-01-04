@@ -20,4 +20,7 @@ Note: Make sure your face is centered. The window will collapse when all the 30 
 
 3) The `face_recognizer.py` is the main script. You need to append the name of each person who sees his/her picture taken in the `face_taker.py` script. The program will recognize the face according to the id given in the `face_taker.py` script. If Joe has an id 1, his name should appear in the list as index 1 like this `names = ['None', 'Joe'] # keep None and append a name into this list`
 
-That is it!! enjoy.
+Requirements:
+
+- `pip install opencv-python`
+- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python --user`
