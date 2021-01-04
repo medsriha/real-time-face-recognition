@@ -12,10 +12,12 @@ Note: Make sure your face is centered. The window will collapse when all the 30 
 
 
 `cmd: python face_train.py`
+
 2) The `face_tain.py` script will train a model to recognize all the faces from the 30 images taken using `face_taker.py` script, and save the training output in the `training.yml` file.
 
 
 `cmd: python face_recognizer.py`
+
 3) The `face_recognizer.py` is the main script. You need to append the name of each person who sees his/her picture taken in the `face_taker.py` script. The program will recognize the face according to the id given in the same script. If Joe has an id 1, his name should appear in the list as index 1. 
 
 Make sure to add the name at the corresponding ID number
