@@ -7,7 +7,7 @@ This is a full step Python program to create an efficient real-time face recogni
 ## Steps:
 
 `cmd: python face_taker.py`
-1) Take pictures using the `face_taker.py` script. The script will save 30 images of your face in the `images` folder after you entered the ID number (MUST be integer and incremental(starts with 1 then 2, 3, ...)
+1) Take pictures using the `face_taker.py` script. The script will save 30 images of your face in the `images` folder after you entered the ID number (MUST be integer and incremental (starts with 1 then 2, 3, ...)
 Note: Make sure your face is centered. The window will collapse when all the 30 pictures are taken.
 
 
