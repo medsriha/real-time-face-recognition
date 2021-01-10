@@ -4,6 +4,28 @@ This is a full step Python program to create an efficient real-time face recogni
 
 <img src = 'https://github.com/medsriha/Real-Time-Face-Recognition/blob/master/gif.gif?raw=true'><center>
 
+```sh
+$ xhost +local:docker
+```
+
+## Build docker image
+
+```sh
+$ docker build -t fr-py .
+```
+
+## Find out device that can stream video
+
+```sh
+$ ls -ltrh /dev/video*
+```
+
+## Run docker container
+
+```sh
+$ docker run -it --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix --device="/dev/video0:/dev/video0" -v `pwd`:/app/ fr-py:latest bash
+```
+
 ## Steps:
 
 `cmd: python face_taker.py`
@@ -19,8 +41,3 @@ Note: Make sure your face is centered. The window will collapse when all the 30 
 `cmd: python face_recognizer.py`
 
 3) The `face_recognizer.py` is the main script. You need to append the name of each person who sees his/her picture taken in the `face_taker.py` script. The program will recognize the face according to the id given in the `face_taker.py` script. If Joe has an id 1, his name should appear in the list as index 1 like this `names = ['None', 'Joe'] # keep None and append a name into this list`
-
-Requirements:
-
-- `pip install opencv-python`
-- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python --user`
