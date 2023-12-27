@@ -52,8 +52,8 @@ if __name__ == "__main__":
     
             # Recognize the face using the trained model
             id, confidence = recognizer.predict(gray[y:y + h, x:x + w])
-
-            if confidence > 50:
+            # Proba greater than 51
+            if confidence > 51:
                 try:
                     # Recognized face
                     name = names[id]
