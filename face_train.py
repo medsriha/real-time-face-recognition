@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # Directory path where the face images are stored.
     path = './images/'
     recognizer = cv2.face.LBPHFaceRecognizer_create()
-    
+    print("\n[INFO] Training...")
     # Haar cascade file for face detection
     detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
     
@@ -34,7 +34,7 @@ if __name__ == "__main__":
             img_numpy = np.array(PIL_img, 'uint8')
             
             # Extract the user ID from the image file name
-            id = int(os.path.split(imagePath)[-1].split(".")[1])
+            id = int(os.path.split(imagePath)[-1].split("-")[1])
     
             # Detect faces in the grayscale image
             faces = detector.detectMultiScale(img_numpy)
@@ -46,7 +46,6 @@ if __name__ == "__main__":
     
         return faceSamples, ids
     
-    print("\n[INFO] Training faces...")
     faces, ids = getImagesAndLabels(path)
     
     # Train the recognizer with the face samples and corresponding labels
