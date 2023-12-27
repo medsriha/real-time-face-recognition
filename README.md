@@ -24,4 +24,4 @@ Note: Make sure your face is centered. The window will collapse when all the 30 
 Requirements:
 
 - `pip install opencv-python`
-- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python --user.`
+- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python --user`
