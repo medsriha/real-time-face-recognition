@@ -1,6 +1,6 @@
 # Real-Time-Face-Recognition (OpenCV)
 
-Create a fast real-time face recognition app with a few lines of Python code.
+Create a fast real-time face recognition app with a few lines of Python code. This program has been tested. **Please make sure to go through the code for more details on how to debug**
 
 <img src = 'https://github.com/medsriha/Real-Time-Face-Recognition/blob/master/gif.gif?raw=true'><center>
 
