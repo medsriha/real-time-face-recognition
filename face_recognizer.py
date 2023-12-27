@@ -23,7 +23,7 @@ if __name__ == "__main__":
     id = 0
     
     ####!!!!Don't forget to add names associated with user IDs!!!!######
-    names = ['None', 'Who are you?']  
+    names = ['None']  
     
     # Video Capture from the default camera (camera index 0)
     cam = cv2.VideoCapture(0)
