@@ -6,10 +6,9 @@ if __name__ == "__main__":
     
     # Create LBPH Face Recognizer
     recognizer = cv2.face.LBPHFaceRecognizer_create()
-    
     # Load the trained model
     recognizer.read('trainer.yml')
-    
+    print(recognizer)
     # Path to the Haar cascade file for face detection
     face_cascade_Path = "haarcascade_frontalface_default.xml"
     
@@ -21,8 +20,7 @@ if __name__ == "__main__":
     
     # Initialize user IDs and associated names
     id = 0
-    
-    ####!!!!Don't forget to add names associated with user IDs!!!!######
+    # Don't forget to add names associated with user IDs
     names = ['None']  
     
     # Video Capture from the default camera (camera index 0)
@@ -55,18 +53,22 @@ if __name__ == "__main__":
             # Recognize the face using the trained model
             id, confidence = recognizer.predict(gray[y:y + h, x:x + w])
 
-            if confidence < 100:
-                # Recognized face
-                id = names[id]
-                confidence = "  {0}%".format(round(100 - confidence))
+            if confidence > 50:
+                try:
+                    # Recognized face
+                    name = names[id]
+                    confidence = "  {0}%".format(round(confidence))
+                except IndexError as e:
+                    name = "Who are you?"
+                    confidence = "N/A"
             else:
                 # Unknown face
-                id = "Who are you?"
-                confidence = "  {0}%".format(round(100 - confidence))
+                name = "Who are you?"
+                confidence = "N/A"
     
             # Display the recognized name and confidence level on the image
-            cv2.putText(img, str(id), (x + 5, y - 5), font, 1, (255, 255, 255), 2)
-            cv2.putText(img, str(confidence), (x + 5, y + h - 5), font, 1, (255, 255, 0), 1)
+            cv2.putText(img, name, (x + 5, y - 5), font, 1, (255, 255, 255), 2)
+            cv2.putText(img, confidence, (x + 5, y + h - 5), font, 1, (255, 255, 0), 1)
     
         # Display the image with rectangles around faces
         cv2.imshow('camera', img)
