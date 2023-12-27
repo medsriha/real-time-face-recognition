@@ -50,9 +50,9 @@ if __name__ == "__main__":
     
             # Increment the count for naming the saved images
             count += 1
-    
+
             # Save the captured image into the 'images' directory
-            cv2.imwrite(f"./images/Users.{face_id}.{count}.jpg", gray[y:y+h, x:x+w])
+            cv2.imwrite(f"./images/Users-{face_id}-{count}.jpg", gray[y:y+h, x:x+w])
     
             # Display the image with rectangles around faces
             cv2.imshow('image', img)
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         elif count >= 30:
             break
     
-    print("\n[INFO] Exiting Program.")
+    print("\n[INFO]Success! Exiting Program.")
     
     # Release the camera
     cam.release()
