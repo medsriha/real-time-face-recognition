@@ -6,9 +6,10 @@ if __name__ == "__main__":
     
     # Create LBPH Face Recognizer
     recognizer = cv2.face.LBPHFaceRecognizer_create()
+    
     # Load the trained model
     recognizer.read('trainer.yml')
-    print(recognizer)
+    
     # Path to the Haar cascade file for face detection
     face_cascade_Path = "haarcascade_frontalface_default.xml"
     
@@ -20,7 +21,8 @@ if __name__ == "__main__":
     
     # Initialize user IDs and associated names
     id = 0
-    # Don't forget to add names associated with user IDs
+    
+    ####!!!!Don't forget to add names associated with user IDs!!!!######
     names = ['None', 'Who are you?']  
     
     # Video Capture from the default camera (camera index 0)
