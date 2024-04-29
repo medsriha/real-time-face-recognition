@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import json
 import os
 
 if __name__ == "__main__":
@@ -21,7 +22,10 @@ if __name__ == "__main__":
     # Initialize user IDs and associated names
     id = 0
     # Don't forget to add names associated with user IDs
-    names = ['None']  
+    names = ['None']
+    with open('names.json', 'r') as fs:
+        names = json.load(fs)
+        names = list(names.values())
     
     # Video Capture from the default camera (camera index 0)
     cam = cv2.VideoCapture(0)
