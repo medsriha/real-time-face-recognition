@@ -28,3 +28,4 @@ Requirements:
 
 - `pip install opencv-python`
 - `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python`
+- `pip install pillow`
