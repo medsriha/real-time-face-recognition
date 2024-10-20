@@ -16,7 +16,7 @@ Create a fast real-time face recognition app with a few lines of Python code.
 
 `face_recognizer.py`
 
-3) The `face_recognizer.py` is the main script. The program will recognize the face according to the ID. i.e., If Joe has an ID = 1, his name should appear in the dictionary of `names.json` as attribute 1 like such:
+3) The `face_recognizer.py` is the main script. The script will recognize the face according to the ID. i.e., If Joe has an ID = 1, their name should appear in the dictionary of `names.json` as attribute 1 like such:
 
 ```json
 {
