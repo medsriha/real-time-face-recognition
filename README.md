@@ -43,6 +43,14 @@ python src/face_taker.py
 - Your name and ID are stored in `names.json`
 - Press 'ESC' to exit early
 
+Format of `names.json`:
+```json
+{
+    "1": "Joe",
+    "2": "Jane"
+}
+```
+
 ### 2. Train the Model
 Run `face_train.py` to create the recognition model:
 ```bash
@@ -52,6 +60,7 @@ python src/face_train.py
 - Creates a trained model file `trainer.yml`
 - Shows number of faces trained
 
+Note: Training images are saved as: `Users-{id}-{number}.jpg`
 ### 3. Run Face Recognition
 Run `face_recognizer.py` to start real-time recognition:
 ```bash
@@ -75,14 +84,4 @@ python src/face_recognizer.py
 └── trainer.yml         # Trained model
 ```
 
-## Data Format
 
-The `names.json` file maps IDs to names:
-```json
-{
-    "1": "Joe",
-    "2": "Jane"
-}
-```
-
-Training images are saved as: `Users-{id}-{number}.jpg`
