@@ -1,0 +1,22 @@
+# Camera settings
+camera:
+  index: 0  # Default camera (0 is usually built-in webcam)
+  width: 640
+  height: 480
+
+# Face detection settings
+face_detection:
+  scale_factor: 1.3
+  min_neighbors: 5
+  min_size: [30, 30]
+
+# Training settings
+training:
+  samples_needed: 120
+
+# File paths
+paths:
+  image_dir: "images"
+  cascade_file: "haarcascade_frontalface_default.xml"
+  names_file: "names.json"
+  trainer_file: "trainer.yml" 
