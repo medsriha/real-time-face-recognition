@@ -1,16 +1,31 @@
 # Real Time Face Recognition (OpenCV)
 
-Create a fast real-time face recognition app with a few lines of Python code.
+Create a fast real-time face recognition app with Python and OpenCV.
 
 ![gif](gif.gif)
 
 ## Installation
 
 ```bash
-pip install opencv-python
-pip install opencv-contrib-python
-pip install pillow
+pip install -r requirements.txt
 ```
+
+Required packages:
+- opencv-python
+- opencv-contrib-python
+- pillow
+- pyyaml
+
+## Configuration
+
+All settings are stored in `src/config.yaml`:
+- Camera settings (resolution, device index)
+- Face detection parameters
+- Training parameters
+- File paths
+- Confidence threshold (how confident the model has to be to recognize a face)
+
+You can modify these settings without changing the code.
 
 ## Usage
 
@@ -22,11 +37,11 @@ Run `face_taker.py` to capture training images:
 python src/face_taker.py
 ```
 - Enter your name when prompted
-- The script captures 30 images of your face
+- :rotating_light: The script captures 120 images of your face. Make sure to have a good lighting and move your head around to capture different angles.
+- Keep your face centered in the frame
 - Images are saved in the `images` folder
 - Your name and ID are stored in `names.json`
-- Keep your face centered in the frame
-- Window closes automatically after capturing all images
+- Press 'ESC' to exit early
 
 ### 2. Train the Model
 Run `face_train.py` to create the recognition model:
@@ -35,17 +50,32 @@ python src/face_train.py
 ```
 - Processes all images in the `images` folder
 - Creates a trained model file `trainer.yml`
+- Shows number of faces trained
 
 ### 3. Run Face Recognition
 Run `face_recognizer.py` to start real-time recognition:
 ```bash
 python src/face_recognizer.py
 ```
-- Your webcam will open
-- Displays name and confidence level next to the face
+- Your webcam will open and start recording
+- Recognizes faces in real-time
+- Shows name and confidence level
 - Press 'ESC' to exit
 
-## Data Structure
+## Project Structure
+```
+├── src/
+│   ├── config.yaml      # Configuration settings
+│   ├── config.py        # Configuration loader
+│   ├── face_taker.py    # Capture training images
+│   ├── face_train.py    # Train the model
+│   └── face_recognizer.py # Real-time recognition
+├── images/              # Training images
+├── names.json          # Name-ID mappings
+└── trainer.yml         # Trained model
+```
+
+## Data Format
 
 The `names.json` file maps IDs to names:
 ```json
@@ -55,13 +85,4 @@ The `names.json` file maps IDs to names:
 }
 ```
 
-## Project Structure
-```
-├── src/
-│   ├── face_taker.py
-│   ├── face_train.py
-│   └── face_recognizer.py
-├── images/
-├── names.json
-└── trainer.yml
-```
+Training images are saved as: `Users-{id}-{number}.jpg`
