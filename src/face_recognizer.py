@@ -104,7 +104,7 @@ if __name__ == "__main__":
                 id, confidence = recognizer.predict(gray[y:y+h, x:x+w])
                 
                 # Check confidence and display result
-                if confidence < CONFIDENCE_THRESHOLD:
+                if confidence >= CONFIDENCE_THRESHOLD:
                     name = names.get(str(id), "Unknown")
                     confidence_text = f"{confidence:.1f}%"
                 else:

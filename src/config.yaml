@@ -20,3 +20,6 @@ paths:
   cascade_file: "haarcascade_frontalface_default.xml"
   names_file: "names.json"
   trainer_file: "trainer.yml" 
+
+# Confidence threshold
+confidence_threshold: 40

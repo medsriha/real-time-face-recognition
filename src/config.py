@@ -20,4 +20,4 @@ TRAINING = config['training']
 PATHS = config['paths']
 
 # Confidence threshold
-CONFIDENCE_THRESHOLD = 80
+CONFIDENCE_THRESHOLD = config['confidence_threshold']
