@@ -1,2 +1,4 @@
 opencv-python
 opencv-contrib-python
+pyyaml
+pillow
