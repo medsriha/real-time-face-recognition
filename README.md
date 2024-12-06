@@ -4,28 +4,64 @@ Create a fast real-time face recognition app with a few lines of Python code.
 
 ![gif](gif.gif)
 
-## Steps:
+## Installation
 
-`face_taker.py`
+```bash
+pip install opencv-python
+pip install opencv-contrib-python
+pip install pillow
+```
 
-1) Take pictures using the `face_taker.py` script. After you enter the user name, the script will save 30 images of your face in the `images` folder and `names.json` file with association between ID number and user name. The ID number represents a single face. Note: Make sure your face is centered. The window will collapse when all the 30 pictures are taken.
+## Usage
 
-`face_train.py`
+The system works in three steps:
 
-2) The `face_tain.py` script will train a model to recognize all the faces from the 30 images taken using `face_taker.py` and save the training output in the `trainer.yml` file.
+### 1. Capture Face Data
+Run `face_taker.py` to capture training images:
+```bash
+python src/face_taker.py
+```
+- Enter your name when prompted
+- The script captures 30 images of your face
+- Images are saved in the `images` folder
+- Your name and ID are stored in `names.json`
+- Keep your face centered in the frame
+- Window closes automatically after capturing all images
 
-`face_recognizer.py`
+### 2. Train the Model
+Run `face_train.py` to create the recognition model:
+```bash
+python src/face_train.py
+```
+- Processes all images in the `images` folder
+- Creates a trained model file `trainer.yml`
 
-3) The `face_recognizer.py` is the main script. The script will recognize the face according to the ID. i.e., If Joe has an ID = 1, their name should appear in the dictionary of `names.json` as attribute 1 like such:
+### 3. Run Face Recognition
+Run `face_recognizer.py` to start real-time recognition:
+```bash
+python src/face_recognizer.py
+```
+- Your webcam will open
+- Displays name and confidence level next to the face
+- Press 'ESC' to exit
 
+## Data Structure
+
+The `names.json` file maps IDs to names:
 ```json
 {
-    "1": "Joe"
+    "1": "Joe",
+    "2": "Jane"
 }
 ```
 
-Requirements:
-
-- `pip install opencv-python`
-- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python`
-- `pip install pillow`
+## Project Structure
+```
+├── src/
+│   ├── face_taker.py
+│   ├── face_train.py
+│   └── face_recognizer.py
+├── images/
+├── names.json
+└── trainer.yml
+```
