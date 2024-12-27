@@ -18,7 +18,7 @@ Required packages:
 
 ## Configuration
 
-All settings are stored in `src/config.yaml`:
+All settings are stored in `src/settings/settings.py`:
 - Camera settings (resolution, device index)
 - Face detection parameters
 - Training parameters
@@ -54,7 +54,7 @@ Format of `names.json`:
 ### 2. Train the Model
 Run `face_train.py` to create the recognition model:
 ```bash
-python src/face_train.py
+python src/face_trainer.py
 ```
 - Processes all images in the `images` folder
 - Creates a trained model file `trainer.yml`
@@ -74,14 +74,16 @@ python src/face_recognizer.py
 ## Project Structure
 ```
 ├── src/
-│   ├── config.yaml      # Configuration settings
-│   ├── config.py        # Configuration loader
+│   ├── settings/
+│   │   ├── __init__.py      # init file
+│   │   ├── settings.py      # Configuration settings
+│   ├── __init__.py      # init file
 │   ├── face_taker.py    # Capture training images
-│   ├── face_train.py    # Train the model
+│   ├── face_trainer.py  # Train the model
 │   └── face_recognizer.py # Real-time recognition
 ├── images/              # Training images
-├── names.json          # Name-ID mappings
-└── trainer.yml         # Trained model
+├── names.json           # Name-ID mappings
+└── trainer.yml          # Trained model
 ```
 
 
