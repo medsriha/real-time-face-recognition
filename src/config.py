@@ -1,23 +1,34 @@
 """
 Configuration settings for the face recognition system
 """
-import yaml
 import os
 
-def load_config():
-    """Load configuration from YAML file"""
-    config_path = os.path.join(os.path.dirname(__file__), 'config.yaml')
-    with open(config_path, 'r') as f:
-        return yaml.safe_load(f)
+# Camera settings
+CAMERA = {
+    'index': 0,  # Default camera (0 is usually built-in webcam)
+    'width': 640,
+    'height': 480
+}
 
-# Load configuration
-config = load_config()
+# Face detection settings
+FACE_DETECTION = {
+    'scale_factor': 1.3,
+    'min_neighbors': 5,
+    'min_size': (30, 30)
+}
 
-# Export configuration sections
-CAMERA = config['camera']
-FACE_DETECTION = config['face_detection']
-TRAINING = config['training']
-PATHS = config['paths']
+# Training settings. Number of images needed to train the model.
+TRAINING = {
+    'samples_needed': 120
+}
 
-# Confidence threshold
-CONFIDENCE_THRESHOLD = config['confidence_threshold']
+# File paths
+PATHS = {
+    'image_dir': 'images',
+    'cascade_file': 'haarcascade_frontalface_default.xml',
+    'names_file': 'names.json',
+    'trainer_file': 'trainer.yml'
+}
+
+# Confidence threshold. Anything above this threshold is considered a match.
+CONFIDENCE_THRESHOLD = 40
