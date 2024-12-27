@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import os
 import logging
-from settings import PATHS
+from settings.settings import PATHS
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

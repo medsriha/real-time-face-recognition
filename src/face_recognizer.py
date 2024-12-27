@@ -7,7 +7,7 @@ import numpy as np
 import json
 import os
 import logging
-from settings import CAMERA, FACE_DETECTION, PATHS, CONFIDENCE_THRESHOLD
+from settings.settings import CAMERA, FACE_DETECTION, PATHS, CONFIDENCE_THRESHOLD
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

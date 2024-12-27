@@ -7,7 +7,7 @@ import cv2
 import os
 from typing import Optional, Dict
 import logging
-from settings import CAMERA, FACE_DETECTION, TRAINING, PATHS
+from settings.settings import CAMERA, FACE_DETECTION, TRAINING, PATHS
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
