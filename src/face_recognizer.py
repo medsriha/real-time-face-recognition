@@ -7,7 +7,7 @@ import numpy as np
 import json
 import os
 import logging
-from settings.settings import CAMERA, FACE_DETECTION, PATHS, CONFIDENCE_THRESHOLD
+from settings.settings import CAMERA, FACE_DETECTION, PATHS
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         if not names:
             logger.warning("No names loaded, recognition will be limited")
         
-        logger.info("Face recognition started. Press 'ESC' to exit.")
+        logger.info("Press 'CTRL + C' to exit.")
         
         while True:
             ret, img = cam.read()
@@ -104,20 +104,17 @@ if __name__ == "__main__":
                 id, confidence = recognizer.predict(gray[y:y+h, x:x+w])
                 
                 # Check confidence and display result
-                if confidence >= CONFIDENCE_THRESHOLD:
+                if confidence <= 100:
                     name = names.get(str(id), "Unknown")
                     confidence_text = f"{confidence:.1f}%"
-                else:
-                    name = "Unknown"
-                    confidence_text = "N/A"
-                
-                # Display name and confidence
-                cv2.putText(img, name, (x+5, y-5), 
-                           cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
-                cv2.putText(img, confidence_text, (x+5, y+h-5), 
-                           cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 1)
+                    
+                    # Display name and confidence
+                    cv2.putText(img, name, (x+5, y-5), 
+                            cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+                    cv2.putText(img, confidence_text, (x+5, y+h-5), 
+                            cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 1)
             
-            cv2.imshow('Face Recognition', img)
+                cv2.imshow('Face Recognition', img)
             
             # Check for ESC key
             if cv2.waitKey(1) & 0xFF == 27:
