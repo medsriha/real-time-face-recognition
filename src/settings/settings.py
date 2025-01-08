@@ -29,6 +29,3 @@ PATHS = {
     'names_file': 'names.json',
     'trainer_file': 'trainer.yml'
 }
-
-# Confidence threshold. Anything above this threshold is considered a match.
-CONFIDENCE_THRESHOLD = 40
