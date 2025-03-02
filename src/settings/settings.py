@@ -22,7 +22,7 @@ TRAINING = {
     'samples_needed': 120
 }
 
-# File paths
+# training dependencies
 PATHS = {
     'image_dir': 'images',
     'cascade_file': 'haarcascade_frontalface_default.xml',
